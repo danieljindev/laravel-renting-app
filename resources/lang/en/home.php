@@ -40,6 +40,8 @@
 	    'Return_Date' => 'Return Date',
 	    'Pickup_Time' => 'Pickup Time',
 	    'Return_Time' => 'Return Time',
+	    'Number_Of_Passengers' => 'Number of passengers',
+	    'Choose_Number_Of_Passengers' => 'Choose Number of passengers',
 	    'rent_a_car' => 'Rent a car',
 	    'rent_a_bike' => 'Rent a bike',
 	    'rent_a_moto' => 'Rent a moto',

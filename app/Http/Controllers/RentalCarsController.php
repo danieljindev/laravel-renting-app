@@ -53,11 +53,12 @@ class RentalCarsController extends Controller
         $returnDate = Input::get('returnDate', false);
         $pickupTime = Input::get('pickupTime', false);
         $returnTime = Input::get('returnTime', false);
+        $passenger_num = Input::get('passenger_num', false);
         $branches = Branch::all();
         $transmissions  = CarGearbox::all();
         $types  = CarType::all();
         return view('rent-a-car.choose-car',
-            compact('cars', 'branches', 'transmissions', 'types', 'branch_pickup', 'branch_return', 'pickupDate', 'returnDate', 'pickupTime', 'returnTime'));
+            compact('cars', 'branches', 'transmissions', 'types', 'branch_pickup', 'branch_return', 'pickupDate', 'returnDate', 'pickupTime', 'returnTime', 'passenger_num'));
     }
 
     public function additional_services(ChooseCarRequest $request)
@@ -161,7 +162,7 @@ class RentalCarsController extends Controller
         $input = $request->all();
         if($file = $request->file('photo_id')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('images',$name);
+            $file->move('public/images',$name);
             $photo = Photo::create(['file' => $name]);
             $input['photo_id'] = $photo->id;
         }

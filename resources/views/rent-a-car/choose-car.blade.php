@@ -120,7 +120,7 @@
 
             <ul>
                 @foreach($cars as $car)
-                    @if($car->branch->id == $branch_pickup && $car->is_available == 1)
+                    @if($car->branch->id == $branch_pickup && $car->is_available == 1 && $car->passengers >= $passenger_num)
                         <li class="mix {{$car->name}} {{$car->type->name}} {{$car->gearbox->name}}">
                             <div class="rental_item">
                                 <div class="wrap_img">
@@ -246,7 +246,6 @@
 @stop
 
 @section('footer')
-    <script src="{{asset('js/libs/modernizr.js')}}"></script>
     <script src="{{asset('js/libs/jquery.mixitup.min.js')}}"></script>
     <script src="{{asset('js/libs/filter-main.js')}}"></script>
     <script>

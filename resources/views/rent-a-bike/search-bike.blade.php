@@ -5,8 +5,8 @@
 @section('content')
 <div class="outer-welcome-vehicle outer-welcome-bike">
     <div class="container rent-zone-search">
-        <div class="row">
-            <div class="col-md-6">
+        <div class="row" style="margin-right: 0;">
+            <div class="col-md-6" style="padding-right: 0;">
             {!! Form::open(['method'=>'GET', 'action' => 'RentalBikesController@choose_bike' ,'class'=>'rent-zone-search'])  !!}
                 <div class="col-md-12">
                     <h1 class="homepagetitle">{!! trans('home.Fast_and_easy_to_rent_a_bike') !!}</h1>

@@ -5,8 +5,8 @@
 @section('content')
 <div class="outer-welcome-vehicle outer-welcome-car">
     <div class="container rent-zone-search">
-        <div class="row">
-            <div class="col-md-6">
+        <div class="row" style="margin-right: 0;">
+            <div class="col-md-6" style="padding-right: 0;">
             {!! Form::open(['method'=>'GET', 'action' => 'RentalCarsController@choose_car' ,'class'=>'rent-zone-search'])  !!}
                 <div class="col-md-12">
                     <h1 class="homepagetitle">{!! trans('home.Fast_and_easy_to_rent_a_car') !!}</h1>
@@ -52,6 +52,13 @@
                     <div class="form-group">
                         {!! Form::label('returnTime', Lang::get('home.Return_Time')) !!}
                         {!! Form::time('returnTime', null, ['class' => 'form-control required', 'id'=> 'returnTime']) !!}
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {!! Form::label('passenger_num', Lang::get('home.Number_Of_Passengers')) !!}
+                        {!! Form::select('passenger_num', [''=> Lang::get('home.Choose_Number_Of_Passengers')] + ['1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5,'6'=>6 ], null, ['class' => 'form-control required']) !!}
                     </div>
                 </div>
                 <div class="clearfix"></div>
